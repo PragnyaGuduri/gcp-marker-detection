@@ -9,6 +9,11 @@ import json
 from pathlib import Path
 import gdown
 import os
+import subprocess
+import sys
+subprocess.check_call([sys.executable, "-m", "pip", "install", 
+    "torch==2.0.1+cpu", "torchvision==0.15.2+cpu",
+    "--index-url", "https://download.pytorch.org/whl/cpu"])
 
 if not os.path.exists('best_model.pth'):
     st.info('Downloading model weights...')
